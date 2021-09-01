@@ -5,6 +5,7 @@ const InputsItems=()=>{
     const InputBookValue=InputBook.value;
     InputBook.value="";
     // geting the Api
+      
     const url=(`http://openlibrary.org/search.json?q=${InputBookValue}`);
         fetch(url)
     .then(res=>res.json())
@@ -23,7 +24,7 @@ const displayBooksList=(books)=>{
             const div=document.createElement('div');
             div.classList.add('col');
             div.innerHTML=`  <div class="card">
-            <img src="..." class="card-img-top" alt="...">
+            <img  src=" https://covers.openlibrary.org/b/id/${book.cover_i}-L.jpg" width="150" height="300px" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">${book.title}</h5>
               <h6>Publisher ${book.publisher} ${book.publish_year}</h6>
